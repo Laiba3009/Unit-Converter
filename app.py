@@ -27,7 +27,7 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-st.markdown("<h1 style='text-align: center; font-size: 36px;'>Unit Converter</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; font-size: 36px;'>Unit Convertor</h1>", unsafe_allow_html=True)
 
 # Dictionary for unit conversion
 to_meters = {
