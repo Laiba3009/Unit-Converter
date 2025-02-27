@@ -1,33 +1,57 @@
 import streamlit as st
 from PIL import Image
-from streamlit_extras.stylable_container import stylable_container  # type: ignore
 
-# Custom Styling
-st.markdown(
-    """
-    <style>
-        .main-title {
-            color: #4CAF50;
-            text-align: center;
-            font-size: 65px;
-            font-weight: bold;
-        }
-        .stButton>button {
-            background-color: blue;
-            color: white;
-            font-size: 18px;
-            border-radius: 10px;
-        }
-        .stSelectbox>div {
-            background-color: #f1f1f1;
-            border-radius: 10px;
-        }
-    </style>
-    """,
-    unsafe_allow_html=True,
-)
+# Dark Mode Toggle
+dark_mode = st.toggle("🌙 Dark Mode")
 
-st.markdown("<h1 style='text-align: center; font-size: 36px;'>Unit Converter</h1>", unsafe_allow_html=True)
+# Apply custom styling based on dark mode
+if dark_mode:
+    st.markdown(
+        """
+        <style>
+            /* Background & Text */
+            body, .stApp { background-color: black !important; color: white !important; }
+            
+            /* Headings */
+            h1, h2, h3, h4, h5, h6, p, label { color: white !important; }
+
+            /* Buttons */
+            .stButton>button { background-color: #4CAF50 !important; color: white !important; border-radius: 10px; }
+
+            /* Selectbox */
+            .stSelectbox>div, .stNumberInput>div, .stTextInput>div { background-color: #222 !important; color: white !important; border-radius: 10px; }
+
+            /* Success Message */
+            .stAlert { background-color: #333 !important; color: white !important; border-radius: 10px; }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
+else:
+    st.markdown(
+        """
+        <style>
+            /* Background & Text */
+            body, .stApp { background-color: white !important; color: black !important; }
+            
+            /* Headings */
+            h1, h2, h3, h4, h5, h6, p, label { color: black !important; }
+
+            /* Buttons */
+            .stButton>button { background-color: blue !important; color: white !important; border-radius: 10px; }
+
+            /* Selectbox */
+            .stSelectbox>div, .stNumberInput>div, .stTextInput>div { background-color: #f1f1f1 !important; color: black !important; border-radius: 10px; }
+
+            /* Success Message */
+            .stAlert { background-color: #ddd !important; color: black !important; border-radius: 10px; }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
+
+# Title
+st.markdown("<h1 style='text-align: center;'>Unit Converter</h1>", unsafe_allow_html=True)
 
 # Dictionary for unit conversion
 to_meters = {
