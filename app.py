@@ -4,6 +4,7 @@ from PIL import Image
 # Dark Mode Toggle
 dark_mode = st.toggle("🌙 Dark Mode")
 
+
 # Apply custom styling based on dark mode
 if dark_mode:
     st.markdown(
@@ -17,7 +18,6 @@ if dark_mode:
 
             /* Buttons */
             .stButton>button { background-color: #4CAF50 !important; color: white !important; border-radius: 10px; }
-
             /* Selectbox */
             .stSelectbox>div, .stNumberInput>div, .stTextInput>div { background-color: #222 !important; color: white !important; border-radius: 10px; }
 
@@ -51,7 +51,8 @@ else:
     )
 
 # Title
-st.markdown("<h1 style='text-align: center;'>Unit Converter</h1>", unsafe_allow_html=True)
+
+st.markdown("<h1 style='text-align: center; font-size: 36px;'>Unit Convertor</h1>", unsafe_allow_html=True)
 
 # Dictionary for unit conversion
 to_meters = {
