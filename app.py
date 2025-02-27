@@ -38,7 +38,7 @@ else:
             h1, h2, h3, h4, h5, h6, p, label { color: black !important; }
 
             /* Buttons */
-            .stButton>button { background-color: blue !important; color: white !important; border-radius: 10px; }
+            .stButton>button { background-color: skyblue !important; color: white !important; border-radius: 10px; }
 
             /* Selectbox */
             .stSelectbox>div, .stNumberInput>div, .stTextInput>div { background-color: #f1f1f1 !important; color: black !important; border-radius: 10px; }
